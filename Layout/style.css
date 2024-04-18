@@ -1,0 +1,91 @@
+* {margin: 10px;}
+ul{padding: 0; margin: 0;}
+nav ul{list-style-type: none;}
+nav a{text-decoration: none; color: black;}
+aside{background-color: aliceblue;}
+
+
+#top_header{
+    background-color: aliceblue;
+    display: block;
+    height: 150px;
+}
+#title h1{position: absolute; top: 50px;}
+#title p{
+    display: inline-block;
+    background-color: aliceblue;
+    position: absolute;
+    top: 120px;
+}
+#navi{
+    position: absolute;
+    top: 120px;
+    right: 40px;
+    display: flex;
+}
+#navi > li{
+    width: 200px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+#navi > li > ul{display: none;}
+#navi>li:hover{background-color: white;}
+#navi>li:hover .submenu{
+    background-color: aliceblue;
+    width: 200px;
+    display: inline-block;
+}
+
+
+#login{
+    float: left;
+    flex-direction: column;
+    padding: 8px;
+}
+label{
+    display : block;
+    margin-bottom: 1px;
+}
+form input[type="button"] {margin-left: 0;}
+form input[type="submit"] {margin-right: 0;}
+
+
+#post{
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+#post article{
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+.card {overflow: hidden;}
+.card img {
+    float: left;
+    width: 170px;
+    margin-right: 40px;
+  }
+.card p {margin-left: 150px;}
+
+
+#ad{
+    float: right;
+    flex-direction: column;
+    padding: 8px;
+}
+#ad article{
+    background-color: rgb(255, 252, 241);
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 5%;
+}
+
+
+#foot > ul{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
