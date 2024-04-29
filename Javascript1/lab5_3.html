@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5_3</title>
+</head>
+<body>
+    <script>
+        let name = prompt("이름을 입력하시오");
+        let age = prompt("나이를 입력하시오(숫자)");
+        let height = parseFloat(prompt("키를 입력하시오(숫자)"));
+        let weight = parseFloat(prompt("몸무게를 입력하시오(숫자)"));
+        let bmi = weight / (height*0.01)**2;
+        let result;
+
+        if (age >= 20 && age < 30) {
+            if (bmi > 30) {
+                result = "비만";
+            }
+            else if (bmi >= 24) {
+                result = "과체중";
+            }
+            else if(bmi >= 18) {
+                result = "표준체중";
+            }
+            else {
+                result = "저체중";
+            }
+        }
+        else if (age >= 30 && age < 40) {
+            if (bmi > 30) {
+                result = "비만";
+            }
+            else if (bmi >= 25) {
+                result = "과체중";
+            }
+            else if(bmi >= 18.5) {
+                result = "표준체중";
+            }
+            else {
+                result = "저체중";
+            }
+        }
+        else {
+            result = "현재 프로그램 설정 나이에 맞지 않아 비밀";
+        }
+
+        document.write(
+            "<h1>" +
+            "이름 : " + name + "<br>" +
+            "나이 : " + age + "<br>" +
+            "키 : " + height + "<br>" +
+            "체중 : " + weight + "<br>" +
+            "당신은 " + result + "입니다." + "<h1>"
+        );
+    </script>
+</body>
+</html>
