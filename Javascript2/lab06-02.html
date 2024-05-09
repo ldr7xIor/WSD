@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab06-02</title>
+    <style>
+        #container {
+            margin: 50px auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 50px;
+            background-color: aliceblue;
+            text-align: center;
+        }
+        h1 { padding-top: 80px; }
+        #button { 
+            margin-top: 50px;
+            padding: 15px;
+            background-color: cornflowerblue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        #lotto { color: crimson; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>로또 번호 생성기</h1><br>
+        <button type="button" id="button" onclick="MakeLotto()">로또 번호 생성하기</button>
+        <p id="lotto"></p>
+    </div>
+
+    <script>
+        function MakeLotto() {
+            let numbers = [];
+            while (numbers.length < 6) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                if (numbers.indexOf(num) === -1) {
+                    numbers.push(num);
+                };
+            };
+            document.getElementById('lotto').innerHTML = "<h1>" + numbers.join(', ') + "</h1>";
+        };
+    </script>
+</body>
+</html>

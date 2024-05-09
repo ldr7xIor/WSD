@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab06-03</title>
+</head>
+<body onload="openPopup()">
+    <script>
+        function openCenter(doc, win, w, h) {
+            let left = (screen.availWidth - w) / 2;
+            let top = (screen.availHeight - h) / 2;
+            let opt = "left=" + left + ", top=" + top + ", width=" + w + ", height=" + h;
+            window.open(doc, win, opt);
+        }
+        
+        let blocked = false;
+        function openPopup() {
+            let newWin = openCenter("lab06-02.html", "", 600, 600);
+        }
+    </script>
+</body>
+</html>
