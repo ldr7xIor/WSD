@@ -24,6 +24,14 @@
             font-size: 17px;
             font-weight: bold;
         }
+        #close {
+            margin-left: 300px;
+            padding: 7px;
+            border: none;
+            border-radius: 4px;
+            background-color: coral;
+            color: white;
+        }
         #lotto { color: crimson; }
     </style>
 </head>
@@ -31,6 +39,7 @@
     <div id="container">
         <h1>로또 번호 생성기</h1><br>
         <button type="button" id="button" onclick="MakeLotto()">로또 번호 생성하기</button>
+        <button id="close" onclick="javascript:window.close();">닫기</button>
         <p id="lotto"></p>
     </div>
 
