@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+    <header>
+        <h1>Sub Brain</h1>
+    </header>
+    <nav>
+        <ul>
+            <li onclick="navigateTo('../playlist/playlist.html')">Playlist</li>
+            <li onclick="navigateTo('../memo/memo.html')">Memo</li>
+            <li onclick="navigateTo('../hotplace/hotplace.html')">Hot Place</li>
+            <li onclick="navigateTo('../calendar/calendar.html')">Calendar</li>
+            <li onclick="navigateTo('../privacy/privacy.html')">Privacy</li>
+        </ul>
+    </nav>
+    <footer>
+        <ul>
+            <li>&copy; Zia Park</li>
+            <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
+            <li>Tel. 010-1234-5678</li>
+        </ul>
+    </footer>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
