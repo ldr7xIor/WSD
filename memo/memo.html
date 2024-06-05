@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메모 앱</title>
+    <style>
+        /* 간단한 CSS 스타일링 */
+        .hidden { display: none; }
+        .memo-list, .memo-detail, .memo-add { margin: 20px; }
+        hr { margin-top: 10px; }
+        .right { float: right; }
+    </style>
+</head>
+<body>
+
+<div id="memoPage" class="memo-list">
+    <h2>메모 목록</h2>
+    <div id="memos"></div>
+    <button id="addMemo">메모 추가</button>
+</div>
+
+<div id="addMemoPage" class="memo-add hidden">
+    <h2>메모 추가</h2>
+    <input type="text" id="memoTitle" placeholder="제목">
+    <textarea id="memoContent" placeholder="내용"></textarea>
+    <button id="saveMemo">저장</button>
+    <button id="cancel">취소</button>
+</div>
+
+<div id="memoDetailPage" class="memo-detail hidden">
+    <h2 id="detailTitle"></h2>
+    <p id="detailDate"></p>
+    <p id="detailContent"></p>
+    <button id="backToList">뒤로가기</button>
+</div>
+
+<script src="memo.js"></script>
+
+</body>
+</html>
