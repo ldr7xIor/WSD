@@ -3,6 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Playlist Page</title>
+    <link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../main/main.html">Sub Brain</a></h1>
+        <h2>Playlist</h2>
+    </header>
+
+    <section>
+        <article>
+            <button onclick="showAddForm()" id="add">+</button>
+            <div id="addForm" style="display:none;">
+                <input type="text" id="songTitle" placeholder="노래 제목">
+                <input type="text" id="songArtist" placeholder="가수">
+                <button onclick="addSong()">추가</button>
+                <button onclick="hideAddForm()">취소</button>
+            </div>
+        </article>
+        <article>
+            <table id="playlistTable">
+                <tr>
+                    <th>노래 제목</th>
+                    <th>가수</th>
+                    <th></th>
+                </tr>
+            </table>
+        </article>
+    </section>
+
+    <footer>
+        <hr>
+        <ul>
+            <li>&copy; Zia Park</li>
+            <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
+            <li>Tel. 010-1234-5678</li>
+        </ul>
+    </footer>
+
     <script>
         function showAddForm() {
             document.getElementById('addForm').style.display = 'block';
@@ -13,52 +51,35 @@
         }
 
         function addSong() {
-            const title = document.getElementById('songTitle').value;
-            const artist = document.getElementById('songArtist').value;
+            const titleInput = document.getElementById('songTitle');
+            const artistInput = document.getElementById('songArtist');
+
+            const title = titleInput.value;
+            const artist = artistInput.value;
+
             if (title && artist) {
                 const table = document.getElementById('playlistTable');
                 const row = table.insertRow();
                 const titleCell = row.insertCell(0);
                 const artistCell = row.insertCell(1);
                 const deleteCell = row.insertCell(2);
-                titleCell.innerHTML = title;
-                artistCell.innerHTML = artist;
-                deleteCell.innerHTML = '<button onclick="deleteRow(this)">X</button>';
+                titleCell.textContent = title;
+                artistCell.textContent = artist;
+                deleteCell.innerHTML = '<button onclick="deleteRow(this)">x</button>';
+
                 hideAddForm();
+
+                // 입력 필드 초기화
+                titleInput.value = '';
+                artistInput.value = '';
             }
         }
+
 
         function deleteRow(button) {
             const row = button.parentNode.parentNode;
             row.parentNode.removeChild(row);
         }
     </script>
-</head>
-<body>
-    <header>
-        <h1>Sub Brain</h1>
-        <h2>Playlist</h2>
-    </header>
-    <button onclick="showAddForm()">+</button>
-    <div id="addForm" style="display:none;">
-        <input type="text" id="songTitle" placeholder="노래 제목">
-        <input type="text" id="songArtist" placeholder="가수">
-        <button onclick="addSong()">추가</button>
-        <button onclick="hideAddForm()">취소</button>
-    </div>
-    <table id="playlistTable">
-        <tr>
-            <th>노래 제목</th>
-            <th>가수</th>
-            <th></th>
-        </tr>
-    </table>
-    <footer>
-        <ul>
-            <li>&copy; Zia Park</li>
-            <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
-            <li>Tel. 010-1234-5678</li>
-        </ul>
-    </footer>
 </body>
 </html>
