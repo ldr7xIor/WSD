@@ -142,11 +142,11 @@ th:last-child, td:last-child {
 
 
 footer {
+    background-color: #fff;
     font-family: "gaegu", sans-serif;
     width: 100%;
     text-align: center;
-    padding: 10px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
