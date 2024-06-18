@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Black Han Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+header {
+    font-size: 30px;
+    color: rgb(255, 112, 101);
+    font-family: "Black Han Sans", sans-serif;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+header a{
+    color: rgb(255, 112, 101);
+    text-decoration: none;
+}
+
+header a:hover{color: #fff;}
+
+header a:hover {
+    color: #fff;
+    text-shadow: -2px -2px 0 #4986ff,
+                -2px 2px 0 #4986ff,
+                2px -2px 0 #4986ff,
+                2px 2px 0 #4986ff;
+}
+
+header h2 {font-size: 40px;}
+
+.hidden { display: none;}
+
+section {
+    width: 100%;
+    min-height: 100vh; /* 최소 높이 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 상단 정렬 */
+    padding-top: 100px; /* 헤더 높이 공간 */
+    font-family: 'Gaegu', sans-serif;
+    position: absolute;
+    top: 100px;
+}
+
+article {
+    width: 90%; /* 너비를 더 넓게 설정 */
+    max-width: 800px; /* 최대 너비 설정 */
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+    position: relative; /* 절대 위치를 위한 상대 위치 */
+    margin-bottom: 20px; /* 아래 여백 추가 */
+}
+
+#addMemoPage {
+    position: relative; /* 변경: 상대 위치 설정 */
+    width: 100%;
+    max-width: 800px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+#addMemoPage div button {
+    font-family: "Gaegu", sans-serif;
+    padding: 8px 13px;
+    font-size: 18px;
+    background-color: #4986ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#addMemoPage div button:hover {background-color: rgb(255, 112, 101);}
+
+#addMemoPage div button {
+    font-size: 15px;
+}
+
+#memoPage, #addMemoPage, #memoDetailPage {
+    position: relative; /* 상대 위치 설정 */
+    width: 100%;
+    max-width: 800px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+#memoPage.hidden, #addMemoPage.hidden, #memoDetailPage.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#memoPage {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#memoPage div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+#addMemo {
+    align-self: flex-end; /* Align button to the end of the flex container */
+    padding: 4px 10px;
+    font-size: 18px;
+    background-color: #4986ff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+
+#addMemo:hover {background-color: rgb(255, 112, 101);}
+
+.memo-item {
+    display: flex;
+    justify-content: space-between; /* 요소들 사이의 공간을 최대한 확보 */
+    align-items: center; /* 세로 중앙 정렬 */
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.memo-item .title {
+    flex: 1; /* 제목이 가능한 한 많이 차지하도록 설정 */
+    margin-right: 10px; /* 제목과 날짜 사이 간격을 조절 */
+}
+
+.memo-item .date {
+    margin-right: 10px; /* 날짜와 삭제 버튼 사이 간격을 조절 */
+}
+
+.memo-item .delete-memo {
+    background-color: #4986ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+.memo-item {
+    display: flex;
+    justify-content: space-between; /* 요소들 사이의 공간을 최대한 확보 */
+    align-items: center; /* 세로 중앙 정렬 */
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.memo-item .title {
+    flex: 1; /* 제목이 가능한 한 많이 차지하도록 설정 */
+    margin-right: 10px; /* 제목과 날짜 사이 간격을 조절 */
+}
+
+.memo-item .date {
+    margin-right: 10px; /* 날짜와 삭제 버튼 사이 간격을 조절 */
+}
+
+.memo-item .delete-memo {
+    background-color: #4986ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 11px;
+    cursor: pointer;
+}
+
+.memo-item .content {
+    flex: 1; /* 내용이 가능한 한 많이 차지하도록 함 */
+    white-space: pre-line; /* 줄 바꿈을 유지하고, 여러 줄을 허용함 */
+}
+
+.memo-item button {
+    background-color: #4986ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+
+.memo-item button:hover {
+    background-color: rgb(255, 112, 101);
+}
+
+
+/* 메모 추가 페이지 스타일 */
+#addMemoPage div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input#memoTitle {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+textarea#memoContent {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#addMemoPage .button-container {
+    display: flex;
+    justify-content: flex-end; /* 버튼들을 우측 정렬 */
+}
+
+#memoDetailPage div button {
+    font-family: "Gaegu", sans-serif;
+    padding: 6px 10px;
+    font-size: 15px;
+    background-color: #4986ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    float: right;
+}
+
+footer {
+    background-color: #fff;
+    font-family: "Gaegu", sans-serif;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Gaegu', sans-serif;
+}

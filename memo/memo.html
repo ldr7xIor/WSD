@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>메모 앱</title>
-    <style>
-        .hidden { display: none; }
-        .memo-list, .memo-detail, .memo-add { margin: 20px; }
-        hr { margin-top: 10px; }
-        .right { float: right; }
-    </style>
+    <link rel="stylesheet" href="memo.css">
 </head>
 <body>
-<header>
-    <h1>Sub Brain</h1>
-</header>
-<div id="memoPage" class="memo-list">
-    <h2>memo</h2>
-    <button id="addMemo">메모 추가</button>
-    <div id="memos"></div>
-</div>
+    <header>
+        <h1><a href="../main/main.html">Sub Brain</a></h1>
+        <h2 id="pageTitle">Memo</h2>
+    </header>
 
-<div id="addMemoPage" class="memo-add hidden">
-    <h2>memo add</h2>
-    <input type="text" id="memoTitle" placeholder="제목">
-    <textarea id="memoContent" placeholder="내용"></textarea>
-    <button id="saveMemo">저장</button>
-    <button id="cancel">취소</button>
-</div>
+    <section>
+        <article id="memoPage">
+            <button id="addMemo">+</button>
+            <div id="memos"></div>
+        </article>
+        
+        <article id="addMemoPage" class="hidden">
+            <div>
+                <input type="text" id="memoTitle" placeholder="제목">
+                <textarea id="memoContent" placeholder="내용"></textarea>
+                <div class="button-container">
+                    <button id="saveMemo">저장</button>
+                    <button id="cancel">취소</button>
+                </div>
+            </div>
+        </article>
 
-<div id="memoDetailPage" class="memo-detail hidden">
-    <h2 id="detailTitle"></h2>
-    <p id="detailDate"></p>
-    <p id="detailContent"></p>
-    <button id="backToList">뒤로가기</button>
-</div>
-<footer>
-    <ul>
-        <li>&copy; Zia Park</li>
-        <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
-        <li>Tel. 010-1234-5678</li>
-    </ul>
-</footer>
-<script src="memo.js"></script>
+        <article id="memoDetailPage" class="hidden">
+            <div>
+                <h2 id="detailTitle"></h2>
+                <p id="detailDate"></p>
+                <p id="detailContent"></p>
+                <button id="backToList">뒤로가기</button>
+            </div>
+        </article>
+    </section>
 
+    <footer>
+        <hr>
+        <ul>
+            <li>&copy; ark</li>
+            <li>email : myung.ac.kr</li>
+            <li>Tel. 010-1234-5678</li>
+        </ul>
+    </footer>
+    
+    <script src="memo.js"></script>
 </body>
 </html>
