@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
+
+header {
+    font-size: 30px;
+    color: rgb(255, 112, 101);
+    font-family: "Black Han Sans", sans-serif;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+header h1 {margin: 0px;}
+
+header a{
+    color: rgb(255, 112, 101);
+    text-decoration: none;
+}
+
+header a:hover{color: #fff;}
+
+header a:hover {
+    color: #fff;
+    text-shadow: -2px -2px 0 #4986ff,
+                -2px 2px 0 #4986ff,
+                2px -2px 0 #4986ff,
+                2px 2px 0 #4986ff;
+}
+
+header h2 {font-size: 40px;}
+
 .main{
     display: flex;
     align-items: center;
@@ -7,7 +39,7 @@
     background: #fff;
 }
 .content-wrap{
-    width: 800px;
+    width: 780px;
     height: 600px;
     margin:0 auto;
     border: 4px solid rgba(161, 161, 161, 0.5); 
@@ -51,7 +83,7 @@
     color: #4986ff;
     line-height : normal;
     padding: .8em .5em 0 0; 
-    font-family: inherit;
+    font-family: 'gaegu', sans-serif;
     border: 0; 
     border-bottom: 1px dashed #4986ff; 
     border-radius: 0; 
@@ -76,10 +108,11 @@
     border: #4986ff 1px dashed;
 }
 .input-list > div{
-    font-size: 10px;
+    font-size: 13px;
     width: 60%;
     float: left;
     color: #4986ff;
+    font-family: 'gaegu', sans-serif;
 }
 .del-data{
     display: block;
@@ -117,4 +150,27 @@
     background: #fff;
     border-radius: 40%;
     color: #4986ff !important;
+}
+
+footer {
+    background-color: #fff;
+    font-family: "Gaegu", sans-serif;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Gaegu', sans-serif;
 }
