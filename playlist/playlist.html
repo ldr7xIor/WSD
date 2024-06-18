@@ -12,7 +12,7 @@
     </header>
 
     <section>
-        <article>
+        <article id="article1">
             <button onclick="showAddForm()" id="add">+</button>
             <div id="addForm" style="display:none;">
                 <input type="text" id="songTitle" placeholder="노래 제목">
@@ -21,14 +21,20 @@
                 <button onclick="hideAddForm()">취소</button>
             </div>
         </article>
-        <article>
+        <article id="article2">
             <table id="playlistTable">
-                <tr>
-                    <th>노래 제목</th>
-                    <th>가수</th>
-                    <th></th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>노래 제목</th>
+                        <th>가수</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="playlistBody">
+                </tbody>
             </table>
+            <div class="pagination" id="pagination">
+            </div>
         </article>
     </section>
 
@@ -41,45 +47,6 @@
         </ul>
     </footer>
 
-    <script>
-        function showAddForm() {
-            document.getElementById('addForm').style.display = 'block';
-        }
-
-        function hideAddForm() {
-            document.getElementById('addForm').style.display = 'none';
-        }
-
-        function addSong() {
-            const titleInput = document.getElementById('songTitle');
-            const artistInput = document.getElementById('songArtist');
-
-            const title = titleInput.value;
-            const artist = artistInput.value;
-
-            if (title && artist) {
-                const table = document.getElementById('playlistTable');
-                const row = table.insertRow();
-                const titleCell = row.insertCell(0);
-                const artistCell = row.insertCell(1);
-                const deleteCell = row.insertCell(2);
-                titleCell.textContent = title;
-                artistCell.textContent = artist;
-                deleteCell.innerHTML = '<button onclick="deleteRow(this)">x</button>';
-
-                hideAddForm();
-
-                // 입력 필드 초기화
-                titleInput.value = '';
-                artistInput.value = '';
-            }
-        }
-
-
-        function deleteRow(button) {
-            const row = button.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-    </script>
+    <script src="playlist.js"></script>
 </body>
 </html>

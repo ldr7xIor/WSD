@@ -39,7 +39,7 @@ header a{
 
 header a:hover{color: #fff;}
 
-header h1:hover {
+header a:hover {
     color: #fff;
     text-shadow: -2px -2px 0 #4986ff,
                 -2px 2px 0 #4986ff,
@@ -48,10 +48,11 @@ header h1:hover {
 }
 
 header h2 {font-size: 40px;}
+
 section {
     font-family: "Gaegu", sans-serif;
     position: absolute;
-    top: 200px;
+    top: 170px;
     margin: 20px auto;
     width: 80%;
     max-width: 800px;
@@ -140,6 +141,25 @@ th:last-child, td:last-child {
     border-radius: 4px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.pagination button {
+    font-family: "Gaegu", sans-serif;
+    padding: 8px 13px;
+    font-size: 18px;
+    background-color: #4986ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+.pagination button:hover {
+    background-color: rgb(255, 112, 101);
+}
 
 footer {
     background-color: #fff;
