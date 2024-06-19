@@ -13,15 +13,77 @@ document.addEventListener('DOMContentLoaded', () => {
     let map, marker;
 
     let hotPlaces = JSON.parse(localStorage.getItem('hotPlaces')) || [];
+    let currentPage = 0;
+    const itemsPerPage = 20;
 
     function showHotPlaces() {
         hotPlacesDiv.innerHTML = '';
-        hotPlaces.forEach((place, index) => {
+        const start = currentPage * itemsPerPage;
+        const end = start + itemsPerPage;
+        const placesToShow = hotPlaces.slice(start, end);
+    
+        placesToShow.forEach((place, index) => {
             const placeDiv = document.createElement('div');
-            placeDiv.textContent = `${place.name} (${place.type})`;
-            placeDiv.addEventListener('click', () => showDetail(index));
+            placeDiv.classList.add('hotPlaceItem'); // 각 항목을 묶는 클래스 추가
+    
+            const namePara = document.createElement('p');
+            namePara.textContent = `${place.name}`;
+            namePara.classList.add('placeName'); // 이름에 대한 클래스 추가
+            placeDiv.appendChild(namePara);
+    
+            const typePara = document.createElement('p');
+            typePara.textContent = `${place.type}`;
+            typePara.classList.add('placeType'); // 종류에 대한 클래스 추가
+            placeDiv.appendChild(typePara);
+    
+            const deleteButton = document.createElement('button');
+            deleteButton.id='DelButton'
+            deleteButton.textContent = 'x';
+            deleteButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                deletePlace(start + index);
+            });
+            placeDiv.appendChild(deleteButton);
+    
+            placeDiv.addEventListener('click', () => showDetail(start + index));
             hotPlacesDiv.appendChild(placeDiv);
         });
+    
+        if (hotPlaces.length > end) {
+            const nextPageButton = document.createElement('button');
+            nextPageButton.id = 'nextpage'
+            nextPageButton.textContent = '다음 페이지';
+            nextPageButton.classList.add('pagination-button');
+            nextPageButton.addEventListener('click', () => {
+                currentPage++;
+                showHotPlaces();
+            });
+            hotPlacesDiv.appendChild(nextPageButton);
+        }
+    
+        if (currentPage > 0) {
+            const prevPageButton = document.createElement('button');
+            prevPageButton.id = 'prevpage'
+            prevPageButton.textContent = '이전 페이지';
+            prevPageButton.classList.add('pagination-button');
+            prevPageButton.addEventListener('click', () => {
+                currentPage--;
+                showHotPlaces();
+            });
+            hotPlacesDiv.appendChild(prevPageButton);
+        }
+    }
+
+    async function initMap(lat = 0, lng = 0) {
+        const googleMaps = await google.maps.importLibrary('maps');
+        map = new googleMaps.Map(mapDiv, {
+            center: { lat, lng },
+            zoom: 15
+        });
+        marker = new google.maps.Marker({
+            position: { lat, lng },
+            map: map
+        });        
     }
 
     function showDetail(index) {
@@ -33,15 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
         initMap(place.lat, place.lng);
     }
 
-    function initMap(lat = 0, lng = 0) {
-        map = new google.maps.Map(mapDiv, {
-            center: { lat, lng },
-            zoom: 15
-        });
-        marker = new google.maps.Marker({
-            position: { lat, lng },
-            map: map
-        });
+    function deletePlace(index) {
+        hotPlaces.splice(index, 1);
+        localStorage.setItem('hotPlaces', JSON.stringify(hotPlaces));
+        showHotPlaces();
     }
 
     addHotPlaceButton.addEventListener('click', () => {

@@ -7,28 +7,44 @@
     <link rel="stylesheet" href="hotplace.css">
 </head>
 <body>
-    <div id="hotPlacePage">
-        <h1>Hot Places</h1><hr>
-        <button id="addHotPlace">+</button>
-        <div id="newHotPlaceForm" class="hidden">
-            <label>가게 이름: <input type="text" id="placeName"></label><br>
-            <label>종류: <input type="text" id="placeType"></label><br>
-            <label>위도: <input type="number" id="latitude"></label><br>
-            <label>경도: <input type="number" id="longitude"></label><br>
-            <button id="savePlace">추가</button>
-            <button id="cancelPlace">취소</button>
-        </div>
-        <div id="hotPlaces"></div>
-    </div>
+    <header>
+        <h1><a href="../main/main.html">Sub Brain</a></h1>
+        <h2>Hot Place</h2>
+    </header>
 
-    <div id="hotPlaceDetailPage" class="hidden">
-        <h2 id="detailName"></h2>
-        <p id="detailType"></p>
-        <div id="map"></div>
-        <button id="backToHotPlaceList">뒤로가기</button>
-    </div>
+    <section>
+        <article id="hotPlacePage">
+            <button id="addHotPlace">+</button>
+            <div id="newHotPlaceForm" class="hidden">
+                <label>가게 이름: <input type="text" id="placeName"></label><br>
+                <label>종류: <input type="text" id="placeType"></label><br>
+                <label>위도: <input type="number" id="latitude"></label><br>
+                <label>경도: <input type="number" id="longitude"></label><br>
+                <button id="savePlace" class="addbutton">추가</button>
+                <button id="cancelPlace" class="addbutton">취소</button>
+            </div>
+            <div id="hotPlaces"></div>
+        </article>
+    
+        <article id="hotPlaceDetailPage" class="hidden">
+            <h2 id="detailName"></h2>
+            <p id="detailType"></p>
+            <div id="map"></div>
+            <button id="backToHotPlaceList">뒤로가기</button>
+        </article>
+    </section>
+
+    <footer>
+        <hr>
+        <ul>
+            <li>&copy; Zia Park</li>
+            <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
+            <li>Tel. 010-1234-5678</li>
+        </ul>
+    </footer>
 
     <script src="hotplace.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
 </body>
 </html>
