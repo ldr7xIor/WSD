@@ -154,7 +154,7 @@ header h2 {font-size: 40px; margin: 0px;}
 
 footer {
     background-color: #fff;
-    font-family: "Gaegu", sans-serif;
+    font-family: "gaegu", sans-serif;
     width: 100%;
     text-align: center;
     position: fixed;
@@ -166,8 +166,6 @@ footer ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
-    padding: 10px;
-    margin: 0;
 }
 
 input::placeholder,

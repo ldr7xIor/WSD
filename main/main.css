@@ -89,15 +89,16 @@ img {
 }
 
 footer {
+    background-color: #fff;
     font-family: "gaegu", sans-serif;
     width: 100%;
     text-align: center;
-    padding: 10px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
 footer ul {
+    list-style-type: none;
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
