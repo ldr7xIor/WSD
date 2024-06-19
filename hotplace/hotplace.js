@@ -24,16 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
         placesToShow.forEach((place, index) => {
             const placeDiv = document.createElement('div');
-            placeDiv.classList.add('hotPlaceItem'); // 각 항목을 묶는 클래스 추가
+            placeDiv.classList.add('hotPlaceItem');
     
             const namePara = document.createElement('p');
             namePara.textContent = `${place.name}`;
-            namePara.classList.add('placeName'); // 이름에 대한 클래스 추가
+            namePara.classList.add('placeName');
             placeDiv.appendChild(namePara);
     
             const typePara = document.createElement('p');
             typePara.textContent = `${place.type}`;
-            typePara.classList.add('placeType'); // 종류에 대한 클래스 추가
+            typePara.classList.add('placeType');
             placeDiv.appendChild(typePara);
     
             const deleteButton = document.createElement('button');
@@ -74,18 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function initMap(lat = 0, lng = 0) {
-        const googleMaps = await google.maps.importLibrary('maps');
-        map = new googleMaps.Map(mapDiv, {
-            center: { lat, lng },
-            zoom: 15
-        });
-        marker = new google.maps.Marker({
-            position: { lat, lng },
-            map: map
-        });        
-    }
-
     function showDetail(index) {
         const place = hotPlaces[index];
         detailName.textContent = place.name;
@@ -99,6 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
         hotPlaces.splice(index, 1);
         localStorage.setItem('hotPlaces', JSON.stringify(hotPlaces));
         showHotPlaces();
+    }
+
+    function initMap(lat = 0, lng = 0) {
+        if (map) {
+            map.remove();
+        }
+        map = L.map(mapDiv).setView([lat, lng], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        marker = L.marker([lat, lng]).addTo(map);
     }
 
     addHotPlaceButton.addEventListener('click', () => {

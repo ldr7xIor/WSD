@@ -28,7 +28,7 @@ header a:hover {
                 2px 2px 0 #4986ff;
 }
 
-header h2 {font-size: 40px;}
+header h2 {font-size: 40px; margin: 0px;}
 
 .main{
     display: flex;

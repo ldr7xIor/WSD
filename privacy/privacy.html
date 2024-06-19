@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Page</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="privacy.css">
 </head>
 <body style="display: none;">
     <header>
-        <h1>Sub Brain</h1>
+        <h1><a href="../main/main.html">Sub Brain</a></h1>
         <h2>privacy</h2>
     </header>
-    <button id="toggleFormButton" onclick="toggleForm()">+</button>
-    <div id="formContainer" class="hidden">
-        <form onsubmit="addItem(); return false;">
-            <input type="text" id="site" placeholder="사이트" required>
-            <input type="password" id="password" placeholder="비밀번호" required>
-            <input type="password" id="confirmPassword" placeholder="비밀번호 확인" required>
-            <button type="submit">추가</button>
-            <button type="reset" onclick="resetForm()">취소</button>
-        </form>
-    </div>
-    <div id="savedList"></div>
+
+    <section>
+        <button id="toggleFormButton" onclick="toggleForm()">+</button>
+        <article id="formContainer" class="hidden">
+            <form onsubmit="addItem(); return false;">
+                <input type="text" id="site" placeholder="사이트" required>
+                <input type="password" id="password" placeholder="비밀번호" required>
+                <input type="password" id="confirmPassword" placeholder="비밀번호 확인" required>
+                <button type="reset" onclick="resetForm()" class="addpw">취소</button>
+                <button type="submit" class="addpw">추가</button>
+            </form>
+        </article>
+        
+        <article id="savedList">
+
+        </article>
+    </section>
+
     <footer>
+        <hr>
         <ul>
             <li>&copy; Zia Park</li>
-            <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
+            <li>Email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
             <li>Tel. 010-1234-5678</li>
         </ul>
     </footer>

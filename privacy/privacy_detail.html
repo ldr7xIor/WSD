@@ -4,26 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Detail Page</title>
+    <link rel="stylesheet" href="privacy_detail.css">
     <script>
-        let password = localStorage.getItem("password");
-
-        function promptPassword() {
-            const inputPassword = prompt("비밀번호를 입력하세요:");
-            if (inputPassword === null) {
-                window.location.href = "privacy.html"; // 사용자가 취소를 눌렀을 때 처리
-                return;
-            }
-            if (inputPassword !== password) {
-                alert("비밀번호가 일치하지 않습니다.");
-                location.href = "privacy.html";
-            } else {
-                // 비밀번호가 일치하는 경우에만 몸통의 내용을 보이도록 처리
-                document.body.style.display = "";
-            }
-        }
-
         window.onload = function() {
-            promptPassword();
             const index = sessionStorage.getItem("detailIndex");
             const savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
             const item = savedItems[index];
@@ -33,26 +16,35 @@
                 document.getElementById("password").innerText = `비밀번호: ${item.password}`;
                 document.getElementById("date").innerText = `저장 날짜: ${item.date}`;
             }
+            document.body.style.display = "";
+
+            sessionStorage.setItem("currentPage", "privacy_detail.html");
         }
 
         function goBack() {
+            sessionStorage.setItem("previousPage", "privacy_detail.html"); // 이전 페이지 설정
             window.location.href = "privacy.html";
         }
     </script>
 </head>
-<body style="display: none;">
+<body>
     <header>
-        <h1>Sub Brain</h1>
+        <h1><a href="../main/main.html">Sub Brain</a></h1>
         <h2>privacy detail</h2>
     </header>
-    <p id="site"></p>
-    <p id="password"></p>
-    <p id="date"></p>
-    <button onclick="goBack()">뒤로 가기</button>
+    <section>
+        <article>
+            <p id="site"></p>
+            <p id="password"></p>
+            <p id="date"></p>       
+            <button onclick="goBack()">뒤로 가기</button>
+        </article>
+    </section>
     <footer>
+        <hr>
         <ul>
             <li>&copy; Zia Park</li>
-            <li>email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
+            <li>Email : 23.cs.qkrwldk@sookmyung.ac.kr</li>
             <li>Tel. 010-1234-5678</li>
         </ul>
     </footer>

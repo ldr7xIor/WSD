@@ -76,8 +76,8 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 10px;
-    float: right; /* 추가 */
-    margin-left: 10px; /* 추가 버튼과 입력 필드 사이의 간격을 주기 위해 추가 */
+    float: right;
+    margin-left: 10px;
 }
 
 button:hover {
@@ -91,18 +91,18 @@ article div button{
 
 #addForm {
     margin-top: 10px;
-    overflow: hidden; /* float 속성을 사용할 때 부모 요소의 높이가 사라지지 않도록 처리 */
+    overflow: hidden;
 }
 
 input[type="text"] {
     padding: 8px;
-    width: calc(40% - 20px); /* 50% 너비, 여백 고려하여 계산 */
+    width: calc(40% - 20px);
     margin-right: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    float: left; /* 왼쪽으로 플로팅 */
+    float: left;
 }
 
 table {

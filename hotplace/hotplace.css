@@ -66,8 +66,7 @@ section {
 }
 
 #map {
-    width: 100%;
-    height: 400px;
+    padding: 200px;
 }
 
 #newHotPlaceForm {
@@ -88,7 +87,7 @@ section {
     gap: 10px;
     width: 100%;
     margin-top: 80px;
-    justify-items: center; /* 중앙 정렬 */
+    justify-items: center;
 }
 
 .hotPlaceItem {
@@ -98,13 +97,13 @@ section {
     background-color: #fff;
     cursor: pointer;
     border-radius: 10px;
-    width: 150px; /* 필요에 따라 너비를 조정하세요 */
-    text-align: center; /* 텍스트를 가운데 정렬합니다 */
-    margin-bottom: 10px; /* 항목 사이의 간격을 조절합니다 */
+    width: 150px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .hotPlaceItem .placeName {
-    font-size: 20px; /* 단락 (가게 이름 및 종류) 사이의 간격을 조정합니다 */
+    font-size: 20px;
 }
 
 .hotPlaceItem .placeType {
@@ -150,49 +149,48 @@ section {
 
 input[type="text"],
 input[type="number"] {
-    padding: 8px; /* 내부 여백 설정 */
-    margin-bottom: 10px; /* 아래쪽 여백 설정 */
-    width: 200px; /* 너비 설정 */
-    border: 1px solid #ccc; /* 테두리 설정 */
-    border-radius: 5px; /* 테두리 반경 설정 */
-    font-size: 14px; /* 폰트 크기 설정 */
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 #hotPlacePage #hotplaces button {
     font-family: 'gaegu', sans-serif;
     font-size: 17px;
-    padding: 8px 15px; /* 내부 여백 설정 */
-    margin: 5px; /* 외부 여백 설정 */
+    padding: 8px 15px;
+    margin: 5px;
     margin-left: 50px;
-    background-color: #4986ff; /* 배경색 설정 */
-    color: white; /* 글자색 설정 */
-    border: none; /* 테두리 없애기 */
-    border-radius: 5px; /* 테두리 반경 설정 */
-    cursor: pointer; /* 포인터 커서 설정 */
+    background-color: #4986ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #hotPlacePage div button:hover {
-    background-color: #ff7065; /* 호버 시 배경색 변경 */
+    background-color: #ff7065;
 }
 
 #hotPlacePage .addbutton {
     font-family: 'gaegu', sans-serif;
     font-size: 17px;
-    padding: 8px 15px; /* 내부 여백 설정 */
-    margin: 5px; /* 외부 여백 설정 */
+    padding: 8px 15px;
+    margin: 5px;
     margin-left: 50px;
-    background-color: #4986ff; /* 배경색 설정 */
-    color: white; /* 글자색 설정 */
-    border: none; /* 테두리 없애기 */
-    border-radius: 5px; /* 테두리 반경 설정 */
+    background-color: #4986ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-/* 입력 필드와 버튼을 감싸는 레이블 스타일 */
 label {
-    display: block; /* 블록 레벨 요소로 설정하여 세로 정렬 */
-    margin-bottom: 10px; /* 아래쪽 여백 설정 */
-    font-weight: bold; /* 굵은 글꼴 설정 */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .pagination-button {
@@ -215,11 +213,11 @@ label {
 }
 
 .pagination-button#nextpage {
-    right: 20px; /* 우측에 위치 */
+    right: 20px;
 }
 
 .pagination-button#prevpage {
-    left: 20px; /* 좌측에 위치 */
+    left: 20px;
 }
 
 #detailName {

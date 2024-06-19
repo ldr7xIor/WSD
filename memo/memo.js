@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function showMemos() {
         const memosDiv = document.getElementById('memos');
-        memosDiv.innerHTML = ''; // 목록을 초기화
+        memosDiv.innerHTML = '';
         memos.forEach((memo, index) => {
             const memoDiv = document.createElement('div');
             memoDiv.className = 'memo-item';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
             memoDiv.querySelector('.delete-memo').onclick = function(event) {
-                event.stopPropagation(); // 이벤트 버블링을 막음
+                event.stopPropagation();
                 memos.splice(index, 1);
                 localStorage.setItem('memos', JSON.stringify(memos));
                 showMemos();
@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     document.getElementById('addMemo').onclick = function() {
         updatePageTitle('Memo Add');
-        memoDetailPage.classList.add('hidden'); // Ensure detail page is hidden
+        memoDetailPage.classList.add('hidden');
         addMemoPage.classList.remove('hidden');
-        memoPage.classList.add('hidden'); // Ensure memoPage is hidden
-        memoPage.parentElement.insertBefore(addMemoPage, memoPage); // Insert addMemoPage above memoPage
+        memoPage.classList.add('hidden');
+        memoPage.parentElement.insertBefore(addMemoPage, memoPage);
     };
     
     document.getElementById('saveMemo').onclick = function() {
@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
         detailContent.textContent = memo.content;
         updatePageTitle('Memo Detail');
         memoDetailPage.classList.remove('hidden');
-        addMemoPage.classList.add('hidden'); // Ensure addMemoPage is hidden
-        memoPage.classList.add('hidden'); // Ensure memoPage is hidden
-        memoPage.parentElement.insertBefore(memoDetailPage, memoPage); // Insert memoDetailPage above memoPage
+        addMemoPage.classList.add('hidden');
+        memoPage.classList.add('hidden');
+        memoPage.parentElement.insertBefore(memoDetailPage, memoPage);
     }
     
     
