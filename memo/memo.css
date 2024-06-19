@@ -279,4 +279,5 @@ footer ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
+    padding: 10px;
 }
